@@ -39,3 +39,63 @@
     }
 }
 
+@media screen and (min-width: 600px) {
+    .topnav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .topnav a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 17px;
+    }
+    .topnav a:nth-last-child(2) {
+        color: green;
+    }
+    .topnav a:first-child {
+        color: red;
+    }
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .topnav .icon {
+        display: none;
+    }
+    .topnav a.icon:hover {
+        display: none;
+    }
+    .burger {
+        display: none;
+    }
+}
+
+@media (max-width: 599px) {
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        background: rgb(161, 161, 161);
+        padding: 15px;
+        transform: translateY(-100%);
+        height: 100vh;
+        transition: all .3s ease-in-out;
+        opacity: 0;
+        z-index: 9999;
+    }
+    .topnav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .topnav a.icon {
+        display: block;
+        text-align: right;
+    }
+}

@@ -1,16 +1,3 @@
-// Start manu first
-
-function myFunction() {
-	var x = document.getElementById("myTopnav");
-	if (x.className === "topnav") {
-		x.className += " responsive";
-	} else {
-		x.className = "topnav";
-	}
-}
-
-// End manu first
-
 // START Swiper PREVIEW
 var galleryThumbs = new Swiper('.gallery-thumbs', {
 	spaceBetween: 20,
@@ -104,6 +91,16 @@ $(document).ready(function () {
 		$input.change();
 		return false;
 	});
+
+	$('.burger').click(function(){
+		$('.topnav').toggleClass('active');
+	});
+	$('body, html').click(function(e){
+		if ($(e.target).closest('.topnav, .burger').length === 0){
+			$('.topnav').removeClass('active')
+		}
+	})
+
 });
 
 // End Counter
